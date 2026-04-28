@@ -7,7 +7,7 @@ st.set_page_config(page_title="SkillSync", page_icon="🎯", layout="wide")
 
 @st.cache_data
 def load_data():
-    df = pd.read_csv("job_descriptions_small.csv")
+    df = pd.read_csv("https://raw.githubusercontent.com/ravindrasinghrana/job-description-dataset/main/job_descriptions.csv")
     df['job_title_clean'] = df['Job Title'].str.lower().str.strip()
     def parse_skills(skill_val):
         if pd.isna(skill_val): return []
